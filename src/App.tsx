@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Timer } from '@/components/Timer'
 import { SessionHistory } from '@/components/SessionHistory'
 import { Settings } from '@/components/Settings'
+import { Modal } from '@/components/Modal'
 import { usePomodoro } from '@/hooks/usePomodoro'
 import { handleSessionComplete, notificationService } from '@/services/notifications'
 
@@ -58,7 +59,7 @@ function App() {
         <div className="action-buttons">
           <Button 
             variant="outline" 
-            onClick={() => setShowHistory(!showHistory)}
+            onClick={() => setShowHistory(true)}
             className="btn btn-secondary action-btn"
           >
             <History size={18} />
@@ -67,7 +68,7 @@ function App() {
           
           <Button 
             variant="outline" 
-            onClick={() => setShowSettings(!showSettings)}
+            onClick={() => setShowSettings(true)}
             className="btn btn-secondary action-btn"
           >
             <SettingsIcon size={18} />
@@ -75,14 +76,26 @@ function App() {
           </Button>
         </div>
 
-        {showHistory && (
+        {/* Modal cho Session History */}
+        <Modal
+          isOpen={showHistory}
+          onClose={() => setShowHistory(false)}
+          title="📊 Lịch sử phiên làm việc"
+          maxWidth="lg"
+        >
           <SessionHistory
             sessions={pomodoro.sessions}
             onClearHistory={pomodoro.clearHistory}
           />
-        )}
+        </Modal>
 
-        {showSettings && (
+        {/* Modal cho Settings */}
+        <Modal
+          isOpen={showSettings}
+          onClose={() => setShowSettings(false)}
+          title="⚙️ Cài đặt"
+          maxWidth="md"
+        >
           <Settings
             config={pomodoro.config}
             onConfigUpdate={pomodoro.updateConfig}
@@ -93,7 +106,7 @@ function App() {
             selectedSound={selectedSound}
             onSoundChange={setSelectedSound}
           />
-        )}
+        </Modal>
       </div>
     </div>
   )
