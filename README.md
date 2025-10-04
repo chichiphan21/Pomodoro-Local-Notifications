@@ -137,11 +137,6 @@ pomodoro/
 
 ## 🚀 Cài đặt và chạy dự án
 
-### Yêu cầu hệ thống
-- **Node.js** >= 18.0.0
-- **npm** hoặc **yarn** hoặc **pnpm**
-- **Git** để clone repository
-
 ### 1️⃣ Clone repository
 
 ```bash
@@ -288,19 +283,6 @@ npm run type-check
 2. Trên web: đảm bảo tab không bị browser suspend
 3. Capacitor apps: check background app refresh permissions
 
-## 🤝 Đóng góp
-
-Chúng tôi hoan nghênh mọi đóng góp! Hãy:
-
-1. **Fork** repository này
-2. **Tạo branch** cho feature mới (`git checkout -b feature/AmazingFeature`)
-3. **Commit** changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** lên branch (`git push origin feature/AmazingFeature`)  
-5. **Mở Pull Request**
-
-## 📄 License
-
-Dự án này được phân phối dưới **MIT License**. Xem file `LICENSE` để biết thêm chi tiết.
 
 ## 👨‍💻 Tác giả
 
